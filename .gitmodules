@@ -1,0 +1,3 @@
+[submodule "ansible/roles/schibsted.appmgr-app"]
+	path = ansible/roles/schibsted.appmgr-app
+	url = git@github.com:Schibsted-ADA/appmgr-app.git

@@ -1,0 +1,17 @@
+---
+- hosts: all
+  sudo: yes
+  pre_tasks:
+    - name: Add appmgr ppa
+      apt_repository: repo=ppa:appmgr/main
+    - name: Install appmgr
+      apt: pkg=appmgr state=latest force=yes
+  roles:
+    - role: schibsted.appmgr-app
+      app:
+        name: demo
+        groupId: net.hamnaberg.appmgr
+        artifactId: appmgr-demo
+        classifier: ""
+        version: 0.1
+      maven_repository: http://dl.bintray.com/hamnis/maven/
